@@ -49,7 +49,34 @@ namespace ComputerApi.Controllers
             {
                 return Ok(os);
             }
-            return BadRequest();
+            return NotFound(new {message = "Nincs találat"});
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<OS>> Put(UpdateOsDto updateOsDto, Guid id)
+        {
+            var existingOs = await computerContext.Os.FirstOrDefaultAsync(o =>o.Id == id);
+            if (existingOs != null)
+            {
+                existingOs.Name = updateOsDto.Name;
+                computerContext.Os.Update(existingOs);
+                await computerContext.SaveChangesAsync();
+                return Ok(existingOs);
+            }
+            return NotFound(new { message = "Nincs találat" });
+        }
+        [HttpDelete("{id}")]
+        public async Task<ActionResult Delete(Guid id)
+        {
+            var os = computerContext.Os.FirstOrDefault(o => o.Id == id);
+
+            if (os != null)
+            {
+                computerContext.Os.Remove(os);
+                await computerContext.SaveChangesAsync();
+                return Ok(new { message = "Nincs találat" });
+            }
+            return NotFound();
         }
     }
 }
