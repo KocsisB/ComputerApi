@@ -1,6 +1,7 @@
 ﻿using ComputerApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ComputerApi.Controllers
 {
@@ -25,13 +26,19 @@ namespace ComputerApi.Controllers
                 CreatedTime = DateTime.Now
             };
 
-            if (os!= null)
+            if (os != null)
             {
                 await computerContext.Os.AddAsync(os);
                 await computerContext.SaveChangesAsync();
-                return StatusCode(201,os);
+                return StatusCode(201, os);
             }
             return BadRequest();
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<OS>> Get()
+        {
+            return Ok(await computerContext.Os.ToListAsync());
         }
     }
 }
