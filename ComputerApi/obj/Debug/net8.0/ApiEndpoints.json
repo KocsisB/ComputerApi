@@ -1,8 +1,54 @@
 [
   {
+    "ContainingType": "ComputerApi.Controllers.ComputerController",
+    "Method": "Post",
+    "RelativePath": "computer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createCompDto",
+        "Type": "ComputerApi.Models.CreateCompDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ComputerApi.Models.Comp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComputerApi.Controllers.ComputerController",
+    "Method": "Get",
+    "RelativePath": "computer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ComputerApi.Models.Comp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ComputerApi.Controllers.OsController",
     "Method": "Post",
-    "RelativePath": "api/Os",
+    "RelativePath": "osystem",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -28,7 +74,7 @@
   {
     "ContainingType": "ComputerApi.Controllers.OsController",
     "Method": "Get",
-    "RelativePath": "api/Os",
+    "RelativePath": "osystem",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -48,8 +94,65 @@
   {
     "ContainingType": "ComputerApi.Controllers.OsController",
     "Method": "GetById",
-    "RelativePath": "api/Os/{id}",
+    "RelativePath": "osystem/{id}",
     "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ComputerApi.Models.OS",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComputerApi.Controllers.OsController",
+    "Method": "Put",
+    "RelativePath": "osystem/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateOsDto",
+        "Type": "ComputerApi.Models.UpdateOsDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ComputerApi.Models.OS",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComputerApi.Controllers.OsController",
+    "Method": "Delete",
+    "RelativePath": "osystem/{id}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [

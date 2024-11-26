@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ComputerApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("osystem")]
     [ApiController]
     public class OsController : ControllerBase
     {
@@ -66,7 +66,7 @@ namespace ComputerApi.Controllers
             return NotFound(new { message = "Nincs találat" });
         }
         [HttpDelete("{id}")]
-        public async Task<ActionResult Delete(Guid id)
+        public async Task<ActionResult<OS>> Delete(Guid id)
         {
             var os = computerContext.Os.FirstOrDefault(o => o.Id == id);
 
