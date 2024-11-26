@@ -46,6 +46,56 @@
     ]
   },
   {
+    "ContainingType": "ComputerApi.Controllers.ComputerController",
+    "Method": "GetAllWindowsOsComputer",
+    "RelativePath": "computer/allWindowsOsComputer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ComputerApi.Models.Comp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComputerApi.Controllers.ComputerController",
+    "Method": "GetNumberOfComputers",
+    "RelativePath": "computer/numberOfComputers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerApi.Controllers.ComputerController",
+    "Method": "GetOsOrderDescendant",
+    "RelativePath": "computer/osOrderWithDescendant",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ComputerApi.Models.OS",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ComputerApi.Controllers.OsController",
     "Method": "Post",
     "RelativePath": "osystem",
@@ -162,6 +212,26 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": [
+      {
+        "Type": "ComputerApi.Models.OS",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComputerApi.Controllers.OsController",
+    "Method": "GetWithAllComputer",
+    "RelativePath": "osystem/withAllComputer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "ComputerApi.Models.OS",
